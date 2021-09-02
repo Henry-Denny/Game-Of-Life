@@ -45,6 +45,7 @@ void Program::Update()
 
 void Program::Tick()
 {
+    auto l_newGen = m_cells;
     // Update cell states
     for (unsigned int x = 0; x < constants::gridSize.x; ++x)
     {
@@ -54,15 +55,16 @@ void Program::Tick()
 
             if (m_cells[x][y])
             {
-                m_cells[x][y] = (numNeighbours >= 2 && numNeighbours <= 3);
+                l_newGen[x][y] = (numNeighbours >= 2 && numNeighbours <= 3);
             }
             else
             {
-                m_cells[x][y] = (numNeighbours == 3);
+                l_newGen[x][y] = (numNeighbours == 3);
             }
             
         }
     }
+    m_cells = l_newGen;
 }
 
 int Program::GetNumAliveNeighbours(sf::Vector2u activeCellPos)
