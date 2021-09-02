@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
             break;
         case 2:
             // Load pathname and project image onto window
-            if (true)
+            if (!program.LoadCellsFromImage(argv[1]))
             {
                 std::cout << "Failure reading \"" << argv[1] << "\". " << "Invalid pathname or file type" << std::endl;
                 return -1;

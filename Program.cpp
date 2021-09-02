@@ -7,6 +7,20 @@ Program::Program()
 
 Program::~Program() {}
 
+bool Program::LoadCellsFromImage(std::string l_pathName)
+{
+    sf::Image cellData;
+    if (!cellData.loadFromFile(l_pathName)) { return false; }
+    if (cellData.getSize().x != 100 || cellData.getSize().y != 100) { return false; }
+    for (int x = 0; x < cellData.getSize().x; ++x)
+    {
+        for (int y = 0; y < cellData.getSize().y; ++y)
+        {
+            m_cells[x][y] = !(cellData.getPixel(x, y) == sf::Color::Black);
+        }
+    }
+}
+
 void Program::Setup()
 {
     // Load image into memory
