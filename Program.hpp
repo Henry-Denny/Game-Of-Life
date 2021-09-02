@@ -2,7 +2,9 @@
 #define PROGRAM_HPP
 
 #include <cstring>
+#include <vector>
 
+#include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 
 #include "Window.hpp"
@@ -24,12 +26,14 @@ public:
 
 private:
     void Tick();
+    int GetNumAliveNeighbours(sf::Vector2u activeCellPos);
 
     Window m_window;
     sf::Clock m_clock;
     float m_elapsed;
 
-    bool m_cells[100][100];
+    std::vector<std::vector<bool>> m_cells;
+    sf::RectangleShape m_cellRect;
 };
 
 #endif

@@ -22,4 +22,11 @@ int main(int argc, char *argv[])
             std::cout << "Usage: Game-Of-Life.exe [path to image]" << std::endl;
             return -1;
     }
+    while (!program.GetWindow()->IsDone())
+    {
+        program.HandleInput();
+        program.Update();
+        program.Draw();
+        program.RestartClock();
+    }
 }

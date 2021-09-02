@@ -10,7 +10,7 @@ Window::~Window() {}
 
 void Window::Create()
 {
-    m_window.create({1200, 1000}, "Game Of Life");
+    m_window.create({constants::gridSize.x * constants::cellSize, constants::gridSize.y * constants::cellSize}, "Game Of Life");
 }
 
 void Window::Setup()
@@ -40,6 +40,5 @@ void Window::EndDraw()
     m_window.display();
 }
 
-void Window::SetDone(bool l_done) { m_done = l_done; }
 bool Window::IsDone() { return m_done; }
 sf::RenderWindow* Window::GetRenderWindow() { return &m_window; }

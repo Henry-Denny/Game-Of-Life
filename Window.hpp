@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "Constants.hpp"
+
 class Window
 {
 public:
