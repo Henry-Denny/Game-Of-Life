@@ -24,6 +24,7 @@ bool Program::LoadCellsFromImage(std::string l_pathName)
 
 void Program::Setup()
 {
+    m_paused = true;
     m_cellRect.setSize(sf::Vector2f(constants::cellSize, constants::cellSize));
     m_cellRect.setFillColor(sf::Color::White);
     RestartClock();
@@ -31,14 +32,15 @@ void Program::Setup()
 
 void Program::HandleInput()
 {
-    m_window.HandleEvents();
+    m_window.HandleEvents(m_cells, m_paused);
 }
 
 void Program::Update()
 {
     if (m_elapsed >= constants::defaultTickTime)
     {
-        Tick();
+        if (!m_paused) { Tick(); }
+        
         m_elapsed -= constants::defaultTickTime;
     }
 }

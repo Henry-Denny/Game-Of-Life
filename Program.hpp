@@ -31,6 +31,7 @@ private:
     Window m_window;
     sf::Clock m_clock;
     float m_elapsed;
+    bool m_paused;
 
     std::vector<std::vector<bool>> m_cells;
     sf::RectangleShape m_cellRect;
