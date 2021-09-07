@@ -1,2 +1,2 @@
-Game-Of-Life.exe : *.cpp
-	g++ -o Game-Of-Life.exe *.cpp *.dll -I ./include
+Game-Of-Life.exe : ./src/*.cpp
+	g++ -o ./bin/Game-Of-Life.exe ./src/*.cpp ./bin/*.dll -I ./include
