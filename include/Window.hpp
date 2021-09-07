@@ -23,6 +23,7 @@ public:
     void SetDone(bool l_done);
     bool IsDone();
     sf::RenderWindow* GetRenderWindow();
+    sf::Vector2u GetSize();
 
 private:
     bool m_done;

@@ -81,3 +81,4 @@ void Window::EndDraw()
 
 bool Window::IsDone() { return m_done; }
 sf::RenderWindow* Window::GetRenderWindow() { return &m_window; }
+sf::Vector2u Window::GetSize() { return m_window.getSize(); }

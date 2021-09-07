@@ -30,13 +30,13 @@ void Program::Setup()
 
     m_font.loadFromFile("./res/otomanopee.ttf");
     m_pausedTBox.setString("Paused...");
-    m_pausedTBox.setFillColor(sf::Color::White);
+    m_pausedTBox.setFillColor(sf::Color(150, 150, 255));
     m_pausedTBox.setFont(m_font);
-    m_pausedTBox.setCharacterSize(40);
+    m_pausedTBox.setCharacterSize(50);
     
     sf::FloatRect pauseTBoxRect = m_pausedTBox.getLocalBounds();
     m_pausedTBox.setOrigin(pauseTBoxRect.left + (pauseTBoxRect.width / 2.0f), 0);
-    m_pausedTBox.setPosition(constants::gridSize.x / 2.0f, 15);
+    m_pausedTBox.setPosition(m_window.GetSize().x / 2.0f, 25);
     RestartClock();
 }
 
@@ -113,6 +113,7 @@ void Program::Draw()
             }
         }
     }
+    if (m_paused) { l_wind->draw(m_pausedTBox); }
     m_window.EndDraw();
 }
 
