@@ -27,6 +27,16 @@ void Program::Setup()
     m_paused = true;
     m_cellRect.setSize(sf::Vector2f(constants::cellSize, constants::cellSize));
     m_cellRect.setFillColor(sf::Color::White);
+
+    m_font.loadFromFile("./res/otomanopee.ttf");
+    m_pausedTBox.setString("Paused...");
+    m_pausedTBox.setFillColor(sf::Color::White);
+    m_pausedTBox.setFont(m_font);
+    m_pausedTBox.setCharacterSize(40);
+    
+    sf::FloatRect pauseTBoxRect = m_pausedTBox.getLocalBounds();
+    m_pausedTBox.setOrigin(pauseTBoxRect.left + (pauseTBoxRect.width / 2.0f), 0);
+    m_pausedTBox.setPosition(constants::gridSize.x / 2.0f, 15);
     RestartClock();
 }
 

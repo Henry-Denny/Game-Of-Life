@@ -32,6 +32,8 @@ private:
     sf::Clock m_clock;
     float m_elapsed;
     bool m_paused;
+    sf::Font m_font;
+    sf::Text m_pausedTBox;
 
     std::vector<std::vector<bool>> m_cells;
     sf::RectangleShape m_cellRect;
