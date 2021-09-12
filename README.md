@@ -1,6 +1,8 @@
 # Game-Of-Life
 A very bare-bones demonstration of John Conway's Game of Life.
 
+<img src="https://github.com/henrydenny246/Game-Of-Life/blob/master/GameOfLife.png" alt="Game-Of-Life" width="400"> 
+
 # Usage
 ```Game-Of-Life.exe [image]```
 
